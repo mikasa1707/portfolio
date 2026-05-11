@@ -1,4 +1,4 @@
-// @import '@fortawesome/fontawesome-free/css/all.min.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 
 :root {
   --bg0: #070a12;
@@ -33,7 +33,7 @@ body {
   background:
     radial-gradient(900px 500px at 15% 10%, rgba(255, 106, 61, 0.14), transparent 60%),
     radial-gradient(800px 500px at 85% 30%, rgba(255, 61, 110, 0.12), transparent 65%),
-    radial-gradient(900px 600px at 50% 100%, rgba(76, 110, 245, 0.10), transparent 65%),
+    radial-gradient(900px 600px at 50% 100%, rgba(76, 110, 245, 0.1), transparent 65%),
     linear-gradient(180deg, #070a12 0%, #0b1220 45%, #090a14 100%);
 
   background-attachment: fixed;
@@ -454,12 +454,39 @@ body {
     width: 280px;
     height: 280px;
   }
+
+  .photo {
+    top: -50px;
+  }
+
+  .nav__links button {
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    padding: 0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 180ms ease;
+  }
+
+  .cta {
+    width: 100%;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
+
+  .btn {
+    flex: 1;
+    min-width: 140px;
+  }
 }
 
 .carousel {
   margin: 20px auto;
   width: 90%;
-  overflow: hidden;          /* IMPORTANT */
+  overflow: hidden; /* IMPORTANT */
   position: relative;
 }
 
@@ -504,13 +531,21 @@ body {
 
 /* animation parfaite sans saut */
 @keyframes scroll-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes scroll-right {
-  from { transform: translateX(-100%); }
-  to   { transform: translateX(0); }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* pause hover (optionnel) */
@@ -520,7 +555,9 @@ body {
 
 /* accessibilité */
 @media (prefers-reduced-motion: reduce) {
-  .track { animation: none; }
+  .track {
+    animation: none;
+  }
 }
 
 .sr-only {
@@ -547,4 +584,3 @@ body {
   cursor: not-allowed;
   pointer-events: none;
 }
-
