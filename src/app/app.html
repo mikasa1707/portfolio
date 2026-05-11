@@ -32,11 +32,7 @@
         >
           Un projet ?
         </a>
-        <a
-          class="btn btn-ghost"
-          target="_blank"
-          download
-          href="assets/CV_professionnel_Michael.pdf"
+        <a class="btn btn-ghost" target="_blank" download href="assets/CV_professionnel_Michael.pdf"
           >Mon CV <i class="fa fa-download"></i
         ></a>
       </div>
@@ -142,9 +138,9 @@
           >
             Démo bientôt
           </a>
-          <!-- <a class="link" [href]="p.repo || '#'" (click)="!p.repo && $event.preventDefault()">
+          <a class="link" [href]="p.repo || '#'" (click)="!p.repo && $event.preventDefault()">
             Code
-          </a> -->
+          </a>
         </div>
       </article>
     </div>
@@ -160,7 +156,7 @@
     <div class="contactCard">
       <div class="cRow">
         <span class="cLabel">Email</span>
-        <a class="cValue" href="raveroson73@gmail.com">raveroson73@gmail.com</a>
+        <a class="cValue" href="mailto:raveroson73@gmail.com">raveroson73@gmail.com</a>
       </div>
       <div class="cRow">
         <span class="cLabel">GitHub</span>
@@ -178,10 +174,20 @@
           Michael Raveroson
         </a>
       </div>
+      <div class="cRow">
+        <span class="cLabel">Telephone</span>
+        <a
+          class="cValue"
+          href="#"
+          (click)="$event.preventDefault()"
+        >
+          +261 34 10 440 80
+        </a>
+      </div>
     </div>
   </section>
 
   <footer class="footer">
-    <span>© {{ name }} — Réalisé avec Angular</span>
+    <span>© {{ name }} — Réalisé avec Angular - <i class="fa fa-copyright "></i> 2026</span>
   </footer>
 </div>

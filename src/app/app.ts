@@ -89,7 +89,7 @@ export class AppComponent {
       desc: 'Portfolio développeur moderne avec glassmorphism, dark mode, animations fluides et responsive design.',
       tags: ['Angular', 'SCSS', 'Responsive'],
       link: '#',
-      repo: '#',
+      repo: 'https://github.com/mikasa1707/portfolio.git',
     },
 
     {
