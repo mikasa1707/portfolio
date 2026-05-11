@@ -1,0 +1,187 @@
+<div class="page">
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__brand">
+      <span class="dot"></span>
+      <span class="brand">{{ name }} <b>Dev</b></span>
+    </div>
+
+    <nav class="nav__links">
+      <button (click)="scrollTo('home')">Accueil</button>
+      <button (click)="scrollTo('about')">À propos</button>
+      <button (click)="scrollTo('projects')">Projets</button>
+      <button (click)="scrollTo('contact')">Contact</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="hero">
+    <section class="hero__left">
+      <p class="hello">Bonjour<span class="accent">.</span></p>
+      <h1 class="title">
+        Je suis <span class="accent">{{ name }}</span
+        ><br />
+        <span class="big">{{ role }}</span>
+      </h1>
+
+      <div class="cta">
+        <a
+          class="btn btn-primary"
+          href="#contact"
+          (click)="scrollTo('contact'); $event.preventDefault()"
+        >
+          Un projet ?
+        </a>
+        <a
+          class="btn btn-ghost"
+          target="_blank"
+          download
+          href="assets/CV_professionnel_Michael.pdf"
+          >Mon CV <i class="fa fa-download"></i
+        ></a>
+      </div>
+
+      <!--
+      <div class="skills">
+        @for (s of skills; track s) {
+          <span class="skill">{{ s }}</span>
+        }
+      </div>
+      -->
+    </section>
+
+    <section class="hero__right">
+      <div class="photoWrap">
+        <img class="photo" src="assets/mika.png" alt="Photo de {{ name }}" />
+      </div>
+    </section>
+  </main>
+
+  <!-- CAROUSEL SKILLS -->
+  <div class="carousel">
+    <div class="track">
+      <div class="group">
+        @for (s of [...skills_1, ...skills_2]; track s.label) {
+          <span class="card-carousel" [title]="s.label">
+            <i [class]="s.icon" aria-hidden="true"></i>
+            <span class="skill-label">{{ s.label }}</span>
+            <span class="sr-only">{{ s.label }}</span>
+          </span>
+        }
+        @for (s of [...skills_1, ...skills_2]; track s.label) {
+          <span class="card-carousel" [title]="s.label">
+            <i [class]="s.icon" aria-hidden="true"></i>
+            <span class="skill-label">{{ s.label }}</span>
+            <span class="sr-only">{{ s.label }}</span>
+          </span>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <!-- <section id="about" class="section about"> -->
+  <section id="about" class="section">
+    <div class="panel about">
+      <div class="about__left">
+        <div class="timeline">
+          <div class="tItem" *ngFor="let s of services; let i = index">
+            <div class="tDot"></div>
+            <div class="tCard">
+              <div class="tIcon">{{ s.icon }}</div>
+              <div>
+                <div class="tTitle">{{ s.title }}</div>
+                <div class="tSub">Conception • Développement • Livraison</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__right">
+        <h2>À propos de moi</h2>
+        <p class="muted">
+          Je conçois des sites et des applications web (Angular / NestJS). J’aime créer des
+          interfaces propres, rapides et responsives, avec une API solide et une base de données
+          bien structurée.
+        </p>
+
+        <div class="stats">
+          <div class="stat" *ngFor="let st of stats">
+            <div class="statVal">{{ st.value }} <span class="accent">+</span></div>
+            <div class="statLabel">{{ st.label }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects">
+    <div class="sectionHead">
+      <h2>Projets</h2>
+      <p class="muted">Quelques projets représentatifs.</p>
+    </div>
+
+    <div class="grid">
+      <article class="pCard" *ngFor="let p of projects">
+        <div class="pTop">
+          <h3>{{ p.title }}</h3>
+          <div class="pTags">
+            <span class="tag" *ngFor="let t of p.tags">{{ t }}</span>
+          </div>
+        </div>
+
+        <p class="muted">{{ p.desc }}</p>
+
+        <div class="pActions">
+          <a
+            class="link disabled"
+            [href]="p.link || '#'"
+            (click)="!p.link && $event.preventDefault()"
+          >
+            Démo bientôt
+          </a>
+          <!-- <a class="link" [href]="p.repo || '#'" (click)="!p.repo && $event.preventDefault()">
+            Code
+          </a> -->
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="sectionHead">
+      <h2>Contact</h2>
+      <p class="muted">Vous pouvez me contacter par email, GitHub, LinkedIn, etc.</p>
+    </div>
+
+    <div class="contactCard">
+      <div class="cRow">
+        <span class="cLabel">Email</span>
+        <a class="cValue" href="raveroson73@gmail.com">raveroson73@gmail.com</a>
+      </div>
+      <div class="cRow">
+        <span class="cLabel">GitHub</span>
+        <a class="cValue" href="https://github.com/mikasa1707" (click)="$event.preventDefault()">
+          Michael Raveroson Git
+        </a>
+      </div>
+      <div class="cRow">
+        <span class="cLabel">LinkedIn</span>
+        <a
+          class="cValue"
+          href="https://www.linkedin.com/in/michael-raveroson-b9a653403"
+          (click)="$event.preventDefault()"
+        >
+          Michael Raveroson
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© {{ name }} — Réalisé avec Angular</span>
+  </footer>
+</div>
